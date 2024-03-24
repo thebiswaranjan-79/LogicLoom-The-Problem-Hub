@@ -4,8 +4,15 @@
   "description": "This is an Admin Service to Manage Problems Of The LogicLoom Platform",
   "main": "index.js",
   "scripts": {
+    "dev": "npx nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.1",
+    "nodemon": "^3.1.0"
+  }
 }
