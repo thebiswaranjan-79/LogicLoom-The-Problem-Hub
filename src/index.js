@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 
 const {PORT} = require('./config/server.config');
 const apiRouter  =  require('./routes');
+const NotFoundError = require('./errors/NotFoundError');
 
 const app = express();
 
@@ -19,4 +20,15 @@ app.get('/ping', (req, res) => {
 
 app.listen(PORT, () =>{
     console.log(`Server Started at PORT ${PORT}`);
+
+    try {
+        throw new NotFoundError({});
+
+    } catch (error) {
+        // Log the Error 
+        console.log("Something Went Wrong");
+    } finally{
+      
+        console.log("Executed Finally");
+    }
 });
