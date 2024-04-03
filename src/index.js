@@ -6,6 +6,7 @@ const apiRouter  =  require('./routes');
 const errorHandler = require('./utils/errorHandler');
 const connectToDB = require('./config/db.config');
 
+
 const app = express();
 
 app.use(bodyParser.json());
