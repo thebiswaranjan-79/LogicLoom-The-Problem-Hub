@@ -6,7 +6,7 @@ function pingProblemController(req,res){
 }
 
 
-function addProlem(req, res, next) {
+function addProblem(req, res, next) {
     try {
         // Nothing implemented 
         throw new NotImplemented('addProblem');
@@ -29,7 +29,7 @@ function getProblems(req, res) {
 
 function deleteProblem(req, res) {
     return res.status(StatusCodes.NOT_IMPLEMENTED).json({
-        message : ' Nnot Implemented'
+        message : ' Not Implemented'
     });
 }
 
@@ -41,7 +41,7 @@ function updateProblem(req, res) {
 
 
 module.exports = {
-    addProlem,
+    addProblem,
     getProblem,
     getProblems,
     deleteProblem,
