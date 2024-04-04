@@ -25,25 +25,35 @@ async function addProblem(req, res, next) {
     }
 }
 
-function getProblem(req, res) {
+function getProblem(req, res, next) {
     return res.status(StatusCodes.NOT_IMPLEMENTED).json({
         message : ' Nnot Implemented'
     });
 }
 
-function getProblems(req, res) {
-    return res.status(StatusCodes.NOT_IMPLEMENTED).json({
-        message : ' Nnot Implemented'
-    });
+async function getProblems(req, res, next) {
+    try {
+        const response = await problemService.getAllProblems();
+
+        res.status(StatusCodes.OK).json({
+            success : true,
+            message : "Successfuly Fetched all the Problems",
+            error : [],
+            data : response
+        });
+
+    } catch (error) {
+        next(error);
+    }
 }
 
-function deleteProblem(req, res) {
+function deleteProblem(req, res, next) {
     return res.status(StatusCodes.NOT_IMPLEMENTED).json({
         message : ' Not Implemented'
     });
 }
 
-function updateProblem(req, res) {
+function updateProblem(req, res,next) {
     return res.status(StatusCodes.NOT_IMPLEMENTED).json({
         message : ' Nnot Implemented'
     });
