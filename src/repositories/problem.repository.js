@@ -1,3 +1,4 @@
+const logger = require('../config/logger.config');
 const {Problem} = require('../models')
 
 class  ProblemRepository{
@@ -42,6 +43,7 @@ class  ProblemRepository{
         try {
             const deletedProblem = await Problem.findByIdAndDelete(id);
             if(!deletedProblem) {
+                logger.error(`Problem with id : ${id} Not Found ID`);
                 throw new NotFound("problem", id);
             }
             return deletedProblem;
